@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PEAK</title>
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+        <h1><a href="#"><span>P</span><span>E</span><span>A</span><span>K</span></a></h1>
+
+        <div class="hamburger-menu">
+          &#8801;
+        </div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="#">Exercises</a></li>
+                <li><a href="#">Workout Tracker</a></li>
+                <li><a href="#">Meal Tracker</a></li>
+                <li><a href="#">Leaderboards</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="welcome-div">
+      <h2 class="welcome">Personalized Exercise & Activity Keeper</h2>
+    </div>
+    <div class="animate-border"></div>
+    <div id="home-container">
+      <form class= "search-form" action="GET">
+          <input type="text" placeholder="🔎 nearby gyms">
+      </form>
+      <div class="login-reg">
+        <a href="#login" class="home-cont">Login</a>
+        <a href="#signup" class="home-cont">Sign Up</a>
+      </div>
+    </div>
+
+    <div id="login" class="info_modal center">
+      <div class="modal-content">
+        <a href="#close" class="close">x</a>
+        <h2>Login</h2>
+        <form id="login-form">
+          <label for="login-email">Email or Username:</label>
+          <input type="text" id="login-email" name="login-email" placeholder="Enter your email or username" required>
+          
+          <label for="login-password">Password:</label>
+          <input type="password" id="login-password" name="login-password" placeholder="Enter your password" required>
+          
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="signup" class="info_modal center">
+      <div class="modal-content">
+        <a href="#close" class="close">x</a>
+        <h2>Register</h2>
+        <form id="register-form">
+          <label for="reg-username">Username:</label>
+          <input type="text" id="reg-username" name="reg-username" placeholder="Choose a username" required>
+          
+          <label for="reg-email">Email:</label>
+          <input type="email" id="reg-email" name="reg-email" placeholder="Enter your email" required>
+          
+          <label for="reg-password">Password:</label>
+          <input type="password" id="reg-password" name="reg-password" placeholder="Create a password" required>
+          
+          <label for="reg-confirm-password">Confirm Password:</label>
+          <input type="password" id="reg-confirm-password" name="reg-confirm-password" placeholder="Confirm your password" required>
+          
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+
+
+      
+    <div class="home-scroll-div">
+        <div class="about">
+          <h4>About Peak</h4>
+          <p>The PEAK fitness application is designed to help users achieve
+            their fitness goals through a personalized workout routine and 
+            lifestyle plan. Whether the goal is weight loss, muscle gain, or
+            overall health improvement, PEAK provides tailored programs to fit
+            individual needs. The system includes a comprehensive fitness assessment,
+            allowing users to set their goals and preferences for a fully customized
+            experience. Features such as a diet generator with dietary restriction 
+            options, guided workout programs, exercise tutorials, and progress 
+            tracking ensure that users stay motivated and on track. Additionally, 
+            PEAK integrates a global and friends leaderboard, encouraging friendly 
+            competition and accountability. For convenience, users can also find the 
+            nearest gyms within a specified radius using an interactive map. With PEAK, 
+            achieving fitness goals has never been easier—helping users stay consistent, 
+            informed, and motivated on their journey to a healthier lifestyle.
+          </p>
+          <div class="contact-us">
+            <h4 id="contact-header">Contact Us</h4>
+            <form action="#" method="post" id="contact-form">
+              <input type="email" name="email" placeholder="email">
+              <textarea name="" id="text-area" cols="30" rows="10"></textarea>
+              <button class="contact-button">Submit</button>
+            </form>
+          </div>
+        </div>
+        <div class="hot-fixes">
+          <h4>Updates and Fixes</h4>
+          <ul>
+            <li><strong>Improved Responsive Design:</strong> Enhanced mobile layouts and navigation for better accessibility.</li>
+            <li><strong>Navigation Bar Update:</strong> Fixed hamburger menu toggle issues and updated styling.</li>
+            <li><strong>Modal Enhancements:</strong> Refined modal window behavior and prevented background scrolling.</li>
+            <li><strong>Performance Optimizations:</strong> Reduced load times by optimizing CSS and JavaScript.</li>
+            <li><strong>Bug Fixes:</strong> Addressed minor layout inconsistencies and form validation errors.</li>
+            <li><strong>UI/UX Refinements:</strong> Updated button styles, typography, and overall visual consistency.</li>
+            <li><strong>Accessibility Improvements:</strong> Enhanced keyboard navigation and improved color contrast for readability.</li>
+          </ul>
+        </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        var menu = document.getElementById("nav-menu");
+        var hamburger = document.querySelector(".hamburger-menu");
+    
+        hamburger.addEventListener("click", function () {
+          var result = menu.classList.toggle("show");
+          console.log("Toggle result:", result);
+          console.log("nav-menu classes:", menu.className);
+        });
+    });
+  </script>
+</html>

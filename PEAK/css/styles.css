@@ -1,0 +1,524 @@
+/* reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html,
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #00000e;
+    color: black;
+}
+
+/* HOME NAV */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px 15px 20px; 
+    z-index: 1000;
+    background-color: #00000e;
+}
+
+header h1 {
+    margin: 0px 0px
+
+}
+p {
+
+    text-indent: 30px;
+}
+
+nav ul {
+    padding:0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+nav li {
+    padding: 10px 20px;
+    transition: all 0.5 linear;
+}
+
+nav li:hover {
+    background-color: #6c757d;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+/* PEAK Animation */
+header h1 span {
+    display: inline-block;
+    animation: jump 2s infinite ease-in-out;
+    color: white;
+}
+/* Define the keyframes for the jump effect */
+@keyframes jump {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Stagger the animation for each letter to create a wave effect */
+header h1 span:nth-child(1) { animation-delay: 0s; }
+header h1 span:nth-child(2) { animation-delay: 0.2s; }
+header h1 span:nth-child(3) { animation-delay: 0.4s; }
+header h1 span:nth-child(4) { animation-delay: 0.6s; }
+
+/* Border Animation */
+.animate-border {
+    position: absolute; 
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 805px;
+    height: 405px;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.animate-border::after, .animate-border::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    background-image: conic-gradient(from var(--angle), transparent 40%, blue);
+    animation: spin 3s linear infinite;
+    z-index: -1; 
+}
+
+@keyframes spin {
+    from {
+        --angle:0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
+
+.animate-border::before {
+    filter:blur(1.5rem);
+    opacity:0.5;
+}
+
+/* HOME CONTAINER */
+#home-container {
+    width: 800px;
+    height: 400px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    padding: 20px;
+
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #09121b;
+    z-index: 1;
+}
+
+.search-form {
+    position:relative;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search-form input {
+    width: 60%;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+}
+
+/* ANIMATED PEAK SLIDE IN */
+.welcome-div {
+    height: 300px;
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    background-color: #1e202d;
+    z-index: -5;
+}
+
+@keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+
+.welcome {
+    font-size:50px;
+    font-family: "Inter", serif;
+    color: white;
+    padding-left: 10px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4);
+    animation: slideIn 1.25s ease-out forwards;
+}
+/* LOGIN REGISTER BUTTON DIV */
+.login-reg {
+    position:absolute;
+    top: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    max-width: 400px;
+}
+.home-cont {
+    flex: 1;
+    padding: 15px 0;
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3 ease;    
+    text-align: center;
+    text-decoration: none;
+}
+
+.home-cont:hover {
+    background: rgba(255,255,255,0.1);
+}
+/* ABOUT AND UPDATE DIV */
+.home-scroll-div {
+    background-color: #1e202d;
+    position: absolute;
+    top: 1200px;
+    width: 100%;
+    height:900px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.about {
+    background-color: #09121b;
+    position: relative;
+    height:80%;
+    width: 500px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+    padding: 20px;
+    box-shadow: 0 0 30px white;
+}
+
+.hot-fixes {
+    background-color: #09121b;
+    position: relative;
+    height:80%;
+    width: 500px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
+    box-shadow: 0 0 30px white;
+}
+
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-header {
+    padding: 20px 0px 0px 0px;
+}
+
+.contact-button {
+    height: 25px;
+    width: 75px;
+}
+
+#text-area {
+    resize: none;
+}
+
+.contact-us {
+    display: flex;
+    flex-direction: column;
+}
+/* HAMBURGER MENU */
+.hamburger-menu {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+/* MODAL */
+.info_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.info_modal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.info_modal > div {
+    width: 600px;
+    height: 600px;
+    background-color: #6c757d;
+    position: relative;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.close {
+    height: 20px;
+    width: 20px;
+    background-color: darkred;
+    color: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-decoration: none;
+    transition: all 1s ease;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.info_modal.center {
+    display: flex;
+}
+  
+.modal-content {
+    background-color: #6c757d; 
+    padding: 2rem;
+    border-radius: 10px;
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content label {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.modal-content input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.modal-content button {
+    padding: 0.75rem;
+    background-color: #343a40; 
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #23272b;
+}
+
+h4 {
+    padding-bottom: 20px;
+}
+/* Close Button Styling */
+.modal-content .close {
+    position: absolute;
+    top: 10px;       
+    right: 15px;    
+    width: 20px;
+    height: 20px;
+    background-color: darkred;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    #home-container {
+        width: 350px;
+        height: 400px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #09121b;
+        z-index: 1;
+    }
+
+    .animate-border {
+        position: absolute; 
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 355px;
+        height: 405px;
+        z-index: -1;
+        border-radius: 10px;
+    }
+
+    .home-scroll-div {
+        background-color: #1e202d;
+        position: absolute;
+        top: 1200px;
+        width: 100%;
+        height:1400px;
+        display: flex;
+        flex-direction: column;
+        gap:50px;
+
+    }
+
+    .about {
+        background-color: #09121b;
+        position: relative;
+        padding-left: 30px;
+        height:500px;
+        width: 350px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: white;
+    }
+
+    .hot-fixes {
+        background-color: #09121b;
+        position: relative;
+        height:500px;
+        width: 350px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        padding: 20px;
+    }
+
+    p {
+        font-size: 10px;
+        text-indent: 30px;
+    }
+    h3 {
+        position: absolute;
+        top:1900px;
+        margin:40px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+    
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        z-index: 1001;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: #09121b;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+
+    nav ul.show {
+        display: flex;
+        flex-direction: column;
+        background-color: #09121b;
+        z-index: 1002;
+    }
+
+    nav li {
+        padding: 15px;
+        border-bottom: 1px solid white;
+    }
+
+    nav li:last-child {
+        border-bottom: none;
+    }
+
+}
