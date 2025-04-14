@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <h1>Rock, Paper, Scissor</h1>
+    <div id="game">
+        <img src="./img/rock.png" alt="rock" class="selection">
+        <img src="./img/paper.png" alt="paper" class="selection">
+        <img src="./img/scissor.png" alt="scissor" class="selection">
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const choicesArr = document.getElementsByClassName('selection')
+            let options = ['rock', 'paper', 'scissor']
+            let choice = null
+            for (let elem of choicesArr) {
+                elem.addEventListener('click', function() {
+
+                    choice = elem.alt
+                    if (choice) {
+                        let randInd = Math.floor(Math.random() * options.length)
+                        let compMove = options[randInd]
+
+                        let res = ''
+                        if (choice == compMove) {
+                            // its a tie 
+                            res = `Computer chose ${compMove}. It's a Tie!`
+                        }
+                        else if (
+                            (choice === 'rock' && compMove === 'scissor') || 
+                            (choice === 'paper' && compMove === 'rock') || 
+                            (choice === 'scissor' && compMove === 'paper')
+                        ) {
+                            // its a win
+                            res = `Computer chose ${compMove}. You Win!`
+                        }
+                        else {
+                            // its a loss
+                            res = `Oh no, Computer chose ${compMove}. You got it next time!`
+                        }
+                        results(res)
+                    }
+                })
+            }
+        })
+
+        function results (msg) {
+            document.getElementById('game').style.display = 'none'
+            let resDiv = document.createElement('div')
+            resDiv.classList.add('center-cont')
+            let message = document.createElement('h2')
+            message.textContent = msg
+            let btn = document.createElement('button')
+            btn.classList.add('btn')
+            btn.textContent = "Play Again"
+            btn.addEventListener('click', function () {
+                location.reload()
+            })
+            resDiv.appendChild(message)
+            resDiv.appendChild(btn)
+            
+            document.body.appendChild(resDiv)
+        }
+    </script>
+  </body>
+</html>
