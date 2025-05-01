@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>PEAK</title>
+        <link rel="stylesheet" href="./css/styles.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <h1><a href="./index.html"><span>P</span><span>E</span><span>A</span><span>K</span></a></h1>
+
+            <div class="hamburger-menu">
+            &#8801;    
+            </div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="./exercises.html">Exercises</a></li>
+                    <li><a href="./workout-tracker.html">Workout Tracker</a></li>
+                    <li><a href="./meal-tracker.html">Meal Tracker</a></li>
+                    <li><a href="./find-gym.html">Find Nearby Gyms</a></li>
+                </ul>
+            </nav>
+        </header>
+        <form id="workout-form">
+            <h2>Log Your Workout</h2>
+
+            <div class="form-group">
+                <label for="workout-name">Workout Name</label>
+                <input type="text" id="workout-name" placeholder="e.g., Chest Day" required>
+            </div>
+
+            <div class="form-group">
+                <label for="workout-date">Date</label>
+                <input type="date" id="workout-date" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="workout-exercises">Exercises</label>
+                <input type="text" id="workout-exercises" placeholder="e.g., Bench Press, Push-Up" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="workout-duration">Duration (minutes)</label>
+                <input type="number" id="workout-duration" placeholder="e.g., 60">
+            </div>
+        
+            <div class="form-group">
+                <label for="workout-notes">Notes</label>
+                <textarea id="workout-notes" rows="4" placeholder="Any extra notes..."></textarea>
+            </div>
+        
+            <button type="submit" id="workout-submit">Save Workout</button>
+        </form>
+
+        <div id="workout-history"></div>
+        <script src="./js/workout.js"></script>
+    </body>
+</html>

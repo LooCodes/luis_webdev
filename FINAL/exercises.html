@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>PEAK</title>
+        <link rel="stylesheet" href="./css/styles.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- NAV BAR -->
+        <header>
+            <h1><a href="./index.html"><span>P</span><span>E</span><span>A</span><span>K</span></a></h1>
+
+            <div class="hamburger-menu">
+            &#8801;
+            </div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="./exercises.html">Exercises</a></li>
+                    <li><a href="./workout-tracker.html">Workout Tracker</a></li>
+                    <li><a href="./meal-tracker.html">Meal Tracker</a></li>
+                    <li><a href="./find-gym.html">Find Nearby Gyms</a></li>
+                </ul>
+            </nav>
+        </header>
+        <h2 id="muscle-group">Select a Muscle Group</h2>
+        <div id="body-parts-selection">
+            <label class="body-part-option">
+              <input type="radio" name="bodypart" value="chest">
+              Chest
+            </label>
+          
+            <label class="body-part-option">
+              <input type="radio" name="bodypart" value="back">
+              Back
+            </label>
+          
+            <label class="body-part-option">
+              <input type="radio" name="bodypart" value="legs">
+              Legs
+            </label>
+          
+            <label class="body-part-option">
+              <input type="radio" name="bodypart" value="cardio">
+              Cardio
+            </label>
+        </div>
+
+        <div id="exercise-preview-list"></div>
+        <div id="exercise-detail"></div>
+        
+        <script src="./js/exercises.js"></script>
+    </body>
+</html>

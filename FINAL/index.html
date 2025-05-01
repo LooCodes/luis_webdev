@@ -14,17 +14,17 @@
 
   <body>
     <header>
-        <h1><a href="#"><span>P</span><span>E</span><span>A</span><span>K</span></a></h1>
+        <h1><a href="./index.html"><span>P</span><span>E</span><span>A</span><span>K</span></a></h1>
 
         <div class="hamburger-menu">
           &#8801;
         </div>
         <nav>
             <ul id="nav-menu">
-                <li><a href="#">Exercises</a></li>
-                <li><a href="#">Workout Tracker</a></li>
-                <li><a href="#">Meal Tracker</a></li>
-                <li><a href="#">Leaderboards</a></li>
+                <li><a href="./exercises.html">Exercises</a></li>
+                <li><a href="./workout-tracker.html">Workout Tracker</a></li>
+                <li><a href="./meal-tracker.html">Meal Tracker</a></li>
+                <li><a href="./find-gym.html">Find Nearby Gyms</a></li>
             </ul>
         </nav>
     </header>
@@ -33,9 +33,7 @@
     </div>
     <div class="animate-border"></div>
     <div id="home-container">
-      <form class= "search-form" action="GET">
-          <input type="text" placeholder="🔎 nearby gyms">
-      </form>
+      <img src="./img/workout.png" alt="Lets Work Out!" class="home-img">
       <div class="login-reg">
         <a href="#login" class="home-cont">Login</a>
         <a href="#signup" class="home-cont">Sign Up</a>
@@ -122,17 +120,42 @@
           </ul>
         </div>
     </div>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+          var menu = document.getElementById("nav-menu")
+          var hamburger = document.querySelector(".hamburger-menu")
+      
+          hamburger.addEventListener("click", function () {
+            var result = menu.classList.toggle("show")
+            console.log("Toggle result:", result)
+            console.log("nav-menu classes:", menu.className)
+          })
+      })
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const welcome = document.querySelector('.welcome')
+        if (!welcome) return
+
+        const text = welcome.textContent
+        welcome.innerHTML = ''
+
+        text.split('').forEach((letter, i) => {
+          const span = document.createElement('span')
+          
+          if (letter === ' ') {
+            span.innerHTML = '&nbsp;'
+          } else {
+            span.textContent = letter
+          }
+
+          span.style.animation = `appear 0.5s forwards`
+          span.style.animationDelay = `${i * 0.05}s`
+
+          welcome.appendChild(span)
+        })
+      })
+
+    </script>
   </body>
-  <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function () {
-        var menu = document.getElementById("nav-menu");
-        var hamburger = document.querySelector(".hamburger-menu");
-    
-        hamburger.addEventListener("click", function () {
-          var result = menu.classList.toggle("show");
-          console.log("Toggle result:", result);
-          console.log("nav-menu classes:", menu.className);
-        });
-    });
-  </script>
+
 </html>
